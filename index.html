@@ -1,0 +1,306 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DJ EXPERIENCE PRO V2.3</title><style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 45%,#15294b,#050812 70%);color:#eaf3ff;font-family:system-ui,Arial;min-height:100vh}header{padding:18px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #294365}h1{margin:0;font-size:22px;letter-spacing:2px}small,.muted{color:#9db2d1}button,select,.upload{border:1px solid #4673a6;background:#152c4a;color:#eaf3ff;border-radius:9px;padding:9px 12px;cursor:pointer}button:hover,.upload:hover{background:#275184}.upload input{display:none}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 20px}.stage{display:grid;grid-template-columns:minmax(0,1fr) 200px minmax(0,1fr);gap:12px;align-items:center;padding:10px 14px}.universe{border:1px solid #2d5b82;background:#071528a8;border-radius:22px;min-width:0;padding:12px;min-height:560px}.universe.b{border-color:#7952b4}.universe h2{text-align:center;font-size:17px;margin:3px 0}.orbit{height:320px;position:relative;overflow:hidden;isolation:isolate}.disc{position:absolute;width:185px;height:185px;border-radius:50%;top:68px;left:50%;transform:translateX(-50%);background:repeating-radial-gradient(circle,#141f30 0 5px,#26364e 6px 7px,#111827 8px 13px);border:5px solid #345e83;box-shadow:0 0 32px #149fd433;animation:spin 12s linear infinite}.b .disc{border-color:#8052c7;box-shadow:0 0 32px #a855f733}.disc:after{content:'DJ';position:absolute;inset:62px;border-radius:50%;background:#13b8e8;color:#071222;display:grid;place-items:center;font-weight:900}.b .disc:after{content:'QUEUE';font-size:13px;background:#ad7bff}@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}.orbitcard{position:absolute;top:50%;left:50%;width:76px;height:48px;border:1px solid #4ec9ff;border-radius:8px;background:#183352;display:grid;place-items:center;font-size:10px;text-align:center;overflow:hidden;padding:4px;cursor:grab;box-shadow:0 3px 12px #0009;transform:translate(-50%,-50%);will-change:transform,opacity}.orbitcard{line-height:1.1;overflow:hidden;overflow-wrap:anywhere;word-break:break-word;hyphens:auto;font-size:9px;font-weight:600;align-content:center}.orbitcard .card-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow:hidden;max-width:100%;max-height:100%;text-align:center;white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.1}.orbitcard:focus{outline:2px solid white}.orbitcard.hovered{border:2px solid #fff;box-shadow:0 0 30px #7dd3fc;filter:brightness(1.35)}.universe{position:relative}.info-popup{display:none;position:absolute;top:70px;left:50%;transform:translateX(-50%);z-index:1000;width:min(90%,310px);padding:16px;border-radius:14px;background:#0c1a31f5;border:2px solid #6ee7ff;box-shadow:0 20px 55px #000c;pointer-events:none;text-align:left}.b .info-popup{border-color:#c084fc}.info-popup.visible{display:block}.info-popup h3{font-size:16px;margin:0 0 10px;overflow-wrap:anywhere}.info-popup p{font-size:12px;margin:6px 0;color:#d3e3fb}.speedcontrol{display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0;font-size:12px;color:#c8d9ef}.speedcontrol input{width:140px;accent-color:#38bdf8}.b .orbitcard{border-color:#ba91ff;background:#352354}.eye{width:180px;height:180px;border-radius:50%;object-fit:cover;box-shadow:0 0 45px #f9731680;border:2px solid #ff974c}.center{text-align:center}.center strong{display:block;margin:16px 0 7px}.center button{margin:4px}.list{height:155px;overflow:auto;border:1px solid #274361;border-radius:10px;padding:7px;background:#020a18}.item{display:flex;gap:8px;align-items:center;padding:7px;margin:3px 0;border-radius:8px;background:#14263d;cursor:grab;font-size:12px}.item span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.item button{padding:3px 8px}.now-playing{margin:12px 0;padding:12px 8px;border:1px solid #3b648e;border-radius:12px;background:#0a1d32}.now-playing-title{font-size:12px;overflow-wrap:anywhere;color:#e7f4ff;margin-bottom:9px}.send-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px}.send-row select{max-width:115px;font-size:11px}.send-row button{font-size:11px}.send-note{font-size:11px;color:#a6e8d0;margin-top:7px;min-height:15px}.mix-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:12px 20px;padding:12px;border:1px solid #42608a;border-radius:12px}.mix-controls label{font-size:12px;display:flex;align-items:center;gap:5px}.mix-controls input{width:75px}.mix-controls select{max-width:135px}.orbit{touch-action:pan-y;cursor:grab}.orbit.scrubbing{cursor:grabbing}.review-toggle{font-size:12px!important;padding:8px 10px!important;width:100%;font-weight:800;border-radius:10px}.review-toggle.off{background:#0d693c;border-color:#50f6a4}.review-toggle.on{background:#a41b2e;border-color:#ff8191}.review-seek{width:100%;accent-color:#ff7b8a}.review-box{padding:8px;margin:8px 0;border:1px solid #365b76;border-radius:10px}.review-box[hidden]{display:none}.queue-tools{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:7px 0}.queue-tools button{font-size:11px;padding:5px 8px}.queue-tabs{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin:10px 0}.queue-tabs button{font-size:11px;padding:7px 9px}.queue-tabs button.queue-drop-hover{background:#1c876d!important;border:2px solid #83ffd7!important;box-shadow:0 0 16px #32ffb7!important;transform:scale(1.06)}.queue-tabs button.active{background:#7840b9;border-color:#e3bbff;color:white;box-shadow:0 0 12px #a855f777}.queue-meta{font-size:12px;text-align:center;color:#b8a0e0;margin:3px 0 8px}.b .list{border-color:#7852ac}.drop{outline:2px dashed #b78aff}.status{margin:12px 20px;padding:13px;background:#0b2035;border-radius:12px;font-size:13px}footer{padding:10px 22px;color:#91a7c4;font-size:12px}@media(max-width:900px){.stage{grid-template-columns:1fr}.center{grid-row:1}.universe{min-height:510px}.orbit{height:280px}}@media(prefers-reduced-motion:reduce){.disc{animation:none}}
+</style></head><body><header><div><h1>DJ EXPERIENCE PRO</h1><small>RAVEN × CUERVO · ISOLATED WORKSHOP V2.2</small></div><span>🦅 ALPHA</span></header>
+<div class="toolbar"><label class="upload">＋ Importar MP3 / M3U<input id="files" type="file" multiple accept=".mp3,.m3u,.m3u8,audio/*"></label><button id="demo">Cargar 24 tarjetas demo</button><button id="save">Guardar sesión</button><label class="upload">Abrir sesión JSON<input id="session" type="file" accept=".json"></label><span class="muted">Final de la Queue:</span><select id="end"><option value="a">Regresar a A</option><option value="b">Repetir B</option><option value="stop">Detener</option></select></div>
+<div class="mix-controls"><strong>DJ MIX ENGINE</strong><label>Modo <select id="mixMode"><option value="timer">Random Timer</option><option value="ended">Al terminar</option></select></label><label>Intervalo <input id="interval" type="number" min="5" max="3600" value="30" step="1"> s</label><label>Equal Power <input id="fade" type="number" min="0" max="20" value="5" step=".5"> s</label><label><input type="checkbox" id="autoMix" checked> Mezcla automática</label><span class="muted" id="mixCountdown">DJ listo</span></div><div class="stage"><section class="universe a"><h2>UNIVERSE A · RANDOM DJ</h2><div class="speedcontrol"><label for="speedA">Velocidad A</label><input type="range" id="speedA" min="0" max="100" value="35"><output id="speedLabelA">35%</output></div><div class="orbit" id="orbitA"><div class="disc"></div></div><div class="info-popup" id="infoA"></div><p class="muted">Biblioteca · pasa el mouse para detener y ampliar</p><div class="list" id="listA"></div></section>
+<section class="center"><img class="eye" src="raven-eye-original.png" alt="Ojo original de RAVEN"><strong>RAVEN EYE</strong><div><button id="playA">▶ A · Random</button><button id="playB">▶ B · Queue</button><button id="next">⏭ Siguiente</button><button id="pause">⏸ Pausa</button></div><p class="muted" id="mode">Sin reproducción</p><div class="review-box"><button id="underReview" class="review-toggle off" type="button">🟢 UNDER REVIEW · OFF</button><div id="reviewTools" hidden><div class="muted" style="font-size:11px;margin:7px 0">Arrastra el control para escuchar cualquier parte de la canción</div><input id="reviewSeek" class="review-seek" type="range" min="0" max="1000" value="0"><div id="reviewTime" class="muted" style="font-size:11px">00:00 / --:--</div></div></div><div class="now-playing" id="nowPlaying" hidden><div class="now-playing-title" id="currentTrack">—</div><div class="send-row" id="sendRow"><select id="sendDestination" aria-label="Queue de destino"></select><button id="sendCurrent" type="button">Send to Queue</button></div><div class="send-note" id="sendNote" aria-live="polite"></div></div><audio id="audio" controls style="width:100%;max-width:190px"></audio><audio id="audio2" preload="none" style="display:none"></audio></section>
+<section class="universe b"><h2>UNIVERSE B · MULTI QUEUE</h2><div class="queue-tabs" id="queueTabs"></div><div class="queue-tools"><button id="renameQueue" type="button">✎ Renombrar Queue</button></div><div class="queue-meta" id="queueMeta">Selecciona la cola de destino</div><div class="speedcontrol"><label for="speedB">Velocidad B</label><input type="range" id="speedB" min="0" max="100" value="35"><output id="speedLabelB">35%</output></div><div class="orbit" id="orbitB"><div class="disc"></div></div><div class="info-popup" id="infoB"></div><p class="muted">Cola exacta · pasa el mouse para detener y ampliar</p><div class="list" id="listB"></div></section></div>
+<div class="status" id="status">Listo. Importa música, selecciona Queue 1–4 en B, arrastra tarjetas desde A y selecciona el modo de reproducción.</div><footer>Workshop aislado: no modifica CUERVO FLIX ni RAVEN. MP4 fuera de alcance. La reproducción de emisoras depende de CORS, formato y disponibilidad del stream. Motor DJ MIX experimental: pendiente de certificación en Chrome.</footer>
+<script>
+const A=[],queues=[[],[],[],[]];let activeQueue=0,playingQueue=0;let B=queues[0];let mode='',pos=-1,drag=null;const hover={A:null,B:null},orbitPhase={A:0,B:0};let lastFrame=null;const orbitDirection={A:1,B:-1},scrub={A:null,B:null};const $=id=>document.getElementById(id),audio=$('audio');let seq=0;let currentTrack=null;let queueNames=['Queue 1','Queue 2','Queue 3','Queue 4'];let reviewActive=false,reviewResumeTimer=false;
+function qName(i){return queueNames[i]||'Queue '+(i+1)}
+function switchQueue(i){if(i<0||i>=queues.length)return;activeQueue=i;B=queues[i];render();status(qName(i)+' seleccionada como destino de Universe A.');}
+function renderQueueTabs(){
+ const tabs=$('queueTabs');tabs.replaceChildren();
+ queues.forEach((q,i)=>{const b=document.createElement('button');b.textContent=qName(i)+' ('+q.length+')';b.className=i===activeQueue?'active':'';b.setAttribute('aria-pressed',String(i===activeQueue));b.onclick=()=>switchQueue(i);
+ b.dataset.queueIndex=String(i);
+ b.title='Arrastra aquí un disco de otra Queue para trasladarlo';
+ b.addEventListener('dragenter',e=>{if(!drag)return;e.preventDefault();b.classList.add('queue-drop-hover')});
+ b.addEventListener('dragover',e=>{if(!drag)return;e.preventDefault();e.dataTransfer.dropEffect=drag.from==='B'?'move':'copy';b.classList.add('queue-drop-hover')});
+ b.addEventListener('dragleave',e=>{if(!b.contains(e.relatedTarget))b.classList.remove('queue-drop-hover')});
+ b.addEventListener('drop',e=>{
+  e.preventDefault();e.stopPropagation();b.classList.remove('queue-drop-hover');
+  if(!drag)return;
+  const dest=i,source=drag.from,sourceIndex=drag.queueIndex;
+  const sourceArr=source==='A'?A:queues[sourceIndex];
+  if(!sourceArr){drag=null;return}
+  const idx=sourceArr.findIndex(t=>t.id===drag.id);
+  if(idx<0){drag=null;return}
+  if(source==='B'&&sourceIndex===dest){drag=null;status('El disco ya está en '+qName(dest));return}
+  const track=source==='B'?sourceArr.splice(idx,1)[0]:sourceArr[idx];
+  queues[dest].push(track);drag=null;
+  document.querySelectorAll('.queue-drop-hover').forEach(el=>el.classList.remove('queue-drop-hover'));
+  render();status('♫ '+track.title+(source==='B'?' trasladado a ':' copiado a ')+qName(dest));
+ });
+ tabs.append(b)});
+ const add=document.createElement('button');add.textContent='＋ Queue';add.title='Crear otra cola';add.onclick=()=>{queues.push([]);queueNames.push('Queue '+queues.length);switchQueue(queues.length-1)};tabs.append(add);
+ $('queueMeta').textContent='Editando '+qName(activeQueue)+(mode==='B'?' · Reproduciendo '+qName(playingQueue):'');
+ refreshSendDestinations();
+}
+function refreshSendDestinations(){
+ const select=$('sendDestination');if(!select)return;
+ const previous=select.value;
+ select.replaceChildren();
+ queues.forEach((q,i)=>{const opt=document.createElement('option');opt.value=String(i);opt.textContent=qName(i)+' ('+q.length+')';select.append(opt)});
+ select.value=previous!==''&&Number(previous)<queues.length?previous:String(activeQueue);
+}
+function showNowPlaying(t){
+ currentTrack=t;
+ $('nowPlaying').hidden=false;
+ $('currentTrack').textContent='♫ '+t.title;
+ $('sendRow').hidden=mode!=='A';
+ $('sendNote').textContent='';
+ refreshSendDestinations();
+}
+$('sendCurrent').addEventListener('click',()=>{
+ if(mode!=='A'||!currentTrack){$('sendNote').textContent='Disponible durante Random A.';return}
+ const i=Number($('sendDestination').value),q=queues[i];
+ if(!q){$('sendNote').textContent='Selecciona una Queue válida.';return}
+ q.push(currentTrack);
+ render();
+ $('sendDestination').value=String(i);
+ $('sendNote').textContent='✓ '+currentTrack.title+' enviada a '+qName(i)+' · '+q.length+' tarjetas';
+ status('Enviada a '+qName(i)+' sin interrumpir Random A: '+currentTrack.title);
+});
+function renameActiveQueue(){
+ const value=prompt('Nuevo nombre para '+qName(activeQueue),qName(activeQueue));
+ if(value===null)return;
+ const cleaned=value.trim().slice(0,50);if(!cleaned)return status('El nombre no puede estar vacío');
+ queueNames[activeQueue]=cleaned;render();status('Queue renombrada: '+cleaned);
+}
+function transferTrack(index){
+ const track=B[index];if(!track)return status('Selecciona un disco');
+ const choices=queues.map((q,i)=>(i+1)+': '+qName(i)).join('\\n');
+ const raw=prompt('Mover «'+track.title+'» a cuál Queue?\\n'+choices,'');
+ if(raw===null)return;
+ const dest=Number(raw)-1;
+ if(!Number.isInteger(dest)||dest<0||dest>=queues.length||dest===activeQueue)return status('Selecciona otro número de Queue válido');
+ const origin=activeQueue;
+ B.splice(index,1);queues[dest].push(track);
+ render();status('«'+track.title+'» trasladado de '+qName(origin)+' a '+qName(dest));
+}
+$('renameQueue').onclick=renameActiveQueue;
+
+function add(title,url,kind='audio'){A.push({id:'t'+(++seq),title,url,kind});render()}
+// Fit text to the unscaled card. CSS transform then scales the card and its text together.
+// Text never receives an independent zoom, avoiding overflow at the front.
+function fitCardText(card){const el=card.querySelector('.card-title');if(el){el.style.fontSize='9px';el.style.maxHeight='40px'}}
+function render(){renderQueueTabs();for(const name of ['A','B']){hover[name]=null;hideInfo(name)}for(const [name,arr] of [['A',A],['B',B]]){const list=$('list'+name),orbit=$('orbit'+name);list.replaceChildren();orbit.querySelectorAll('.orbitcard').forEach(e=>e.remove());arr.forEach((t,i)=>{const row=document.createElement('div');row.className='item';row.draggable=true;row.dataset.id=t.id;row.dataset.from=name;const label=document.createElement('span');label.textContent=(name==='B'?(i+1)+'. ':'')+t.title;row.append(label);if(name==='A'){const btn=document.createElement('button');btn.textContent='→ B';btn.onclick=()=>{B.push(t);render()};row.append(btn)}else{for(const [txt,fn] of [['↑',()=>move(i,-1)],['↓',()=>move(i,1)],['×',()=>{B.splice(i,1);render()}]]){const b=document.createElement('button');b.textContent=txt;b.onclick=fn;row.append(b)}}row.addEventListener('dragstart',e=>{drag={from:name,id:t.id,queueIndex:activeQueue};e.dataTransfer.effectAllowed=name==='B'?'move':'copy';e.dataTransfer.setData('text/plain',t.id)});list.append(row);{const c=document.createElement('div');c.className='orbitcard';c.draggable=true;c.dataset.id=t.id;c.dataset.from=name;const inner=document.createElement('span');inner.className='card-title';inner.textContent=t.title;c.append(inner);fitCardText(c);c.title=t.title;c.tabIndex=0;c.addEventListener('dragstart',e=>{drag={from:name,id:t.id,queueIndex:activeQueue};e.dataTransfer.effectAllowed=name==='B'?'move':'copy';e.dataTransfer.setData('text/plain',t.id)});c.addEventListener('dblclick',()=>{if(name==='A'){B.push(t);render()}else{B.splice(i,1);render()}});
+c.addEventListener('mouseenter',()=>{hover[name]=t.id;c.classList.add('hovered');showInfo(name,t,i);});
+c.addEventListener('mouseleave',()=>{if(hover[name]===t.id)hover[name]=null;c.classList.remove('hovered');hideInfo(name);});
+c.addEventListener('focus',()=>{hover[name]=t.id;c.classList.add('hovered');showInfo(name,t,i);});
+c.addEventListener('blur',()=>{if(hover[name]===t.id)hover[name]=null;c.classList.remove('hovered');hideInfo(name);});
+orbit.append(c);fitCardText(c)}})}}
+
+// All cards orbit continuously. Hover freezes only its universe and lifts that card.
+function hideInfo(name){$('info'+name).classList.remove('visible')}
+function showInfo(name,t,i){
+ const box=$('info'+name);box.replaceChildren();
+ const h=document.createElement('h3');h.textContent=t.title;
+ const details=[
+  ['Universo',name==='A'?'A · Biblioteca aleatoria':'B · '+qName(activeQueue)],
+  ['Posición',String(i+1)+' de '+(name==='A'?A.length:B.length)],
+  ['Formato',t.kind==='stream'?'Emisora / M3U':t.kind==='demo'?'Tarjeta demo':'Audio local'],
+  ['Fuente',t.url.startsWith('blob:')?'Archivo local de esta sesión':t.url||'Sin audio (demo)']
+ ];
+ box.append(h);
+ for(const [label,value] of details){const p=document.createElement('p');p.textContent=label+': '+value;box.append(p)}
+ box.classList.add('visible');
+}
+function animateOrbits(now){
+ const dt=lastFrame===null?0:Math.min(70,now-lastFrame);lastFrame=now;
+ for(const [name,arr] of [['A',A],['B',B]]){
+  const wrap=$('orbit'+name),cards=wrap.querySelectorAll('.orbitcard');
+  const n=cards.length;if(!n)continue;
+  const w=wrap.clientWidth,h=wrap.clientHeight;
+  const rx=Math.max(55,Math.min(w*.39,205)),ry=Math.min(h*.37,125);
+  const speed=Number($('speed'+name).value)/100;
+  if(!hover[name]&&!scrub[name])orbitPhase[name]+=dt*speed*.00055*orbitDirection[name];
+  const phase=orbitPhase[name];
+  cards.forEach((c,i)=>{
+   const angle=phase+i*2*Math.PI/n-Math.PI/2;
+   const depth=Math.sin(angle);
+   const x=w/2+rx*Math.cos(angle),y=h/2+ry*depth;
+   // Cards at the front become significantly larger; back cards shrink.
+   // Distinct front-focus: card at bottom/front of ellipse grows dramatically.
+   // Smooth bell curve avoids sudden popping between cards.
+   const frontFactor=Math.pow(Math.max(0,(depth+.15)/1.15),5);
+   const scale=.55+1.95*frontFactor;
+   c.style.borderWidth=(1+2*frontFactor)+'px';
+   c.style.boxShadow=frontFactor>.4?`0 0 ${Math.round(15+35*frontFactor)}px rgba(92,215,255,${(.15+.65*frontFactor).toFixed(2)})`:'0 3px 12px #0009';
+   const selected=hover[name]===c.dataset.id;
+   c.style.left=x+'px';c.style.top=y+'px';
+   c.style.transform=`translate(-50%,-50%) scale(${selected?2.05:scale}) translateY(${selected?'-20px':'0px'})`;
+   c.style.opacity=String(selected?1:.38+.62*(depth+1)/2);
+   c.style.zIndex=String(selected?200:Math.round(20+frontFactor*100));
+  });
+ }
+ requestAnimationFrame(animateOrbits);
+}
+for(const name of ['A','B'])$('speed'+name).addEventListener('input',e=>{$('speedLabel'+name).textContent=e.target.value+'%'});
+requestAnimationFrame(animateOrbits);
+// Drag the empty orbit background left/right to spin and reverse direction.
+// Wheel over the orbit also nudges and sets its direction; cards remain draggable into queues.
+for(const name of ['A','B']){
+ const el=$('orbit'+name);
+ el.addEventListener('pointerdown',e=>{
+  if(e.target.closest('.orbitcard'))return;
+  scrub[name]={x:e.clientX,last:e.clientX};
+  el.setPointerCapture(e.pointerId);el.classList.add('scrubbing');
+ });
+ el.addEventListener('pointermove',e=>{
+  const st=scrub[name];if(!st)return;
+  const dx=e.clientX-st.last;st.last=e.clientX;
+  if(Math.abs(dx)>.05){orbitPhase[name]+=dx*.012;orbitDirection[name]=dx>0?1:-1}
+ });
+ const finish=()=>{scrub[name]=null;el.classList.remove('scrubbing')};
+ el.addEventListener('pointerup',finish);el.addEventListener('pointercancel',finish);
+ el.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const dx=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+  orbitPhase[name]+=-dx*.008;orbitDirection[name]=dx<0?1:-1;
+ },{passive:false});
+}
+function move(i,d){const j=i+d;if(j<0||j>=B.length)return;[B[i],B[j]]=[B[j],B[i]];render()}
+for(const id of ['listB','orbitB']){const target=$(id);target.addEventListener('dragover',e=>{e.preventDefault();target.classList.add('drop')});target.addEventListener('dragleave',()=>target.classList.remove('drop'));target.addEventListener('drop',e=>{e.preventDefault();target.classList.remove('drop');if(!drag)return;const t=A.find(x=>x.id===drag.id)||B.find(x=>x.id===drag.id);if(!t)return;const row=e.target.closest('[data-id]');let idx=row?B.findIndex(x=>x.id===row.dataset.id):B.length;if(idx<0)idx=B.length;if(drag.from==='B'){const old=B.findIndex(x=>x.id===drag.id);if(old>=0){B.splice(old,1);if(old<idx)idx--}}B.splice(idx,0,t);drag=null;render()})}
+document.addEventListener('dragend',()=>{drag=null;document.querySelectorAll('.queue-drop-hover').forEach(el=>el.classList.remove('queue-drop-hover'))});
+function status(s){$('status').textContent=s}
+// Two independent HTML audio decks, Equal Power gain curves, interval scheduling.
+const decks=[audio,$('audio2')];let activeDeck=0,mixGeneration=0,transitioning=false;
+let fadeFrame=0,timerId=0,secondsLeft=0,lastPlayedId=null,randomBag=[];
+const getDeck=()=>decks[activeDeck];
+function clearMix(){clearTimeout(timerId);cancelAnimationFrame(fadeFrame);mixGeneration++;transitioning=false;decks[activeDeck].volume=1;}
+function setCountdown(){const el=$('mixCountdown');el.textContent=mode&&$('autoMix').checked&&$('mixMode').value==='timer'?'Siguiente mezcla: '+Math.max(0,Math.ceil(secondsLeft))+' s':'DJ listo'}
+function scheduleMix(){
+ clearTimeout(timerId);if(reviewActive){setCountdown();return;}if(!$('autoMix').checked||$('mixMode').value!=='timer'||!mode)return;
+ secondsLeft=Math.max(5,Math.min(3600,Number($('interval').value)||30));setCountdown();
+ const token=mixGeneration;
+ const tick=()=>{
+  if(token!==mixGeneration)return;
+  if(getDeck().paused){timerId=setTimeout(tick,1000);return}
+  secondsLeft-=1;setCountdown();
+  if(secondsLeft<=0)next();else timerId=setTimeout(tick,1000);
+ };timerId=setTimeout(tick,1000);
+}
+function fmtTime(t){if(!Number.isFinite(t))return '--:--';return String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0')}
+function setReview(enabled){
+ reviewActive=enabled;
+ const b=$('underReview');b.className='review-toggle '+(enabled?'on':'off');
+ b.textContent=enabled?'🔴 UNDER REVIEW · ON':'🟢 UNDER REVIEW · OFF';
+ $('reviewTools').hidden=!enabled;
+ if(enabled){
+  reviewResumeTimer=mode==='A';
+  clearTimeout(timerId);cancelAnimationFrame(fadeFrame);mixGeneration++;
+  const playing=getDeck();playing.volume=1;
+  decks.forEach(d=>{if(d!==playing){d.pause();d.volume=1}});
+  transitioning=false;
+  status('UNDER REVIEW: mezcla automática detenida. Usa el deslizador para revisar la canción.');
+ }else{
+  if(reviewResumeTimer&&mode==='A')scheduleMix();
+  status('UNDER REVIEW desactivado: Random reanudado.');
+  reviewResumeTimer=false;
+ }
+ setCountdown();
+}
+$('underReview').onclick=()=>setReview(!reviewActive);
+$('reviewSeek').addEventListener('input',e=>{
+ if(!reviewActive)return;
+ const d=getDeck(),dur=d.duration;
+ if(!Number.isFinite(dur)||dur<=0){status('Esta fuente no permite buscar dentro de la canción.');return}
+ try{d.currentTime=dur*Number(e.target.value)/1000}catch(err){status('Esta fuente no admite búsqueda: '+err.message)}
+});
+setInterval(()=>{
+ if(!reviewActive)return;
+ const d=getDeck(),dur=d.duration;
+ if(Number.isFinite(dur)&&dur>0){$('reviewSeek').value=String(Math.round(d.currentTime/dur*1000));$('reviewTime').textContent=fmtTime(d.currentTime)+' / '+fmtTime(dur)}
+ else $('reviewTime').textContent='Búsqueda no disponible para esta fuente';
+},300);
+function chooseRandom(){
+ const eligible=A.filter(t=>t.url&&t.kind!=='demo');
+ if(!eligible.length)return null;
+ const ids=new Set(eligible.map(t=>t.id));
+ randomBag=randomBag.filter(id=>ids.has(id));
+ if(!randomBag.length){
+  randomBag=eligible.map(t=>t.id);
+  for(let i=randomBag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[randomBag[i],randomBag[j]]=[randomBag[j],randomBag[i]]}
+  if(randomBag.length>1&&randomBag[randomBag.length-1]===lastPlayedId){const x=randomBag.pop();randomBag.unshift(x)}
+ }
+ const id=randomBag.pop();lastPlayedId=id;return eligible.find(t=>t.id===id);
+}
+function stopAll(){if(reviewActive)setReview(false);clearMix();currentTrack=null;$('nowPlaying').hidden=true;for(const d of decks){d.pause();d.volume=1}}
+function play(t){
+ if(!t||!t.url){status('Esta tarjeta no contiene audio reproducible');return}
+ const token=++mixGeneration;
+ clearTimeout(timerId);cancelAnimationFrame(fadeFrame);transitioning=false;
+ const old=decks[activeDeck],incoming=decks[1-activeDeck];
+ // A cancelled crossfade can leave the currently active deck at gain zero.
+ // Restore it before it becomes the outgoing deck in the next transition.
+ old.volume=1;
+ const fadeSeconds=Math.max(0,Math.min(20,Number($('fade').value)||0));
+ const shouldFade=!old.paused&&old.src&&fadeSeconds>0;
+ incoming.pause();incoming.src=t.url;incoming.load();incoming.volume=shouldFade?0:1;
+ incoming.play().then(()=>{
+  if(token!==mixGeneration){incoming.pause();return}
+  showNowPlaying(t);
+  status('DJ '+(mode==='A'?'RANDOM A':'QUEUE '+(playingQueue+1))+' · '+t.title);
+  $('mode').textContent=mode==='A'?'A · RANDOM':'B · QUEUE '+(playingQueue+1);
+  activeDeck=1-activeDeck;
+  if(!shouldFade){old.pause();old.removeAttribute('src');old.load();scheduleMix();return}
+  transitioning=true;
+  const started=performance.now();
+  function fadeStep(now){
+   if(token!==mixGeneration)return;
+   const p=Math.min(1,(now-started)/(fadeSeconds*1000));
+   incoming.volume=Math.min(1,Math.sin(p*Math.PI/2));
+   old.volume=Math.max(0,Math.cos(p*Math.PI/2));
+   if(p<1)fadeFrame=requestAnimationFrame(fadeStep);
+   else{old.pause();old.removeAttribute('src');old.load();old.volume=1;transitioning=false}
+  }
+  fadeFrame=requestAnimationFrame(fadeStep);scheduleMix();
+ }).catch(err=>{if(token!==mixGeneration)return;old.volume=1;status('No se pudo reproducir '+t.title+': '+err.message);incoming.pause();incoming.removeAttribute('src');incoming.load();});
+}
+function next(){
+ if(reviewActive)return status('UNDER REVIEW activo: desactívalo para continuar Random');
+ if(mode==='A'){const t=chooseRandom();if(!t)return status('Importa archivos MP3 o streams reproducibles en A');play(t)}
+ else if(mode==='B'){
+  const q=queues[playingQueue];if(!q.length)return status('Queue '+(playingQueue+1)+' está vacía');
+  pos++;if(pos>=q.length){const choice=$('end').value;
+   if(choice==='a'){mode='A';pos=-1;renderQueueTabs();next();return}
+   if(choice==='b')pos=0;
+   else{stopAll();status('Queue '+(playingQueue+1)+' terminada');mode='';setCountdown();return}
+  }play(q[pos]);
+ }
+}
+$('playA').onclick=()=>{stopAll();mode='A';pos=-1;renderQueueTabs();next()};
+$('playB').onclick=()=>{stopAll();mode='B';playingQueue=activeQueue;pos=-1;renderQueueTabs();next()};
+$('next').onclick=next;
+$('pause').onclick=()=>{if(getDeck().paused){getDeck().play().catch(()=>{});}else{for(const d of decks)d.pause();}};
+for(const d of decks)d.addEventListener('ended',()=>{if(d===getDeck()&&!transitioning&&!reviewActive)next()});
+for(const id of ['interval','fade','mixMode','autoMix'])$(id).addEventListener('change',()=>{if(mode){scheduleMix()}});
+$('files').onchange=async e=>{
+ const files=Array.from(e.target.files||[]);e.target.value='';
+ let imported=0,errors=0;
+ status('Archivos seleccionados: '+files.length+' · Preparando importación...');
+ try{
+  for(let i=0;i<files.length;i++){
+   const f=files[i];
+   try{
+    if(/\.(mp3|wav|ogg|m4a|aac|flac)$/i.test(f.name)||f.type.startsWith('audio/')){
+     add(f.name,URL.createObjectURL(f),'audio',false);imported++;
+    }else if(/\.m3u8?$/i.test(f.name)){
+     const lines=(await f.text()).split(/\r?\n/);let title='';
+     for(const line of lines){const l=line.trim();if(l.startsWith('#EXTINF'))title=l.split(',').slice(1).join(',').trim();else if(l&&!l.startsWith('#')){if(/^https?:\/\//i.test(l)){add(title||l,l,'stream',false);imported++}title=''}}
+    }else{errors++}
+   }catch(fileError){errors++;console.error('Archivo no importado',f.name,fileError)}
+   if(i%8===7||i===files.length-1){status('Preparando '+(i+1)+'/'+files.length+' archivos · '+imported+' pistas');await new Promise(r=>setTimeout(r,0))}
+  }
+  status('Preparadas '+imported+' pistas · Creando tarjetas...');
+  await new Promise(r=>setTimeout(r,0));
+  render();
+  status('IMPORTACIÓN COMPLETADA: '+imported+' pistas. '+(errors?errors+' archivos omitidos.':'')+' Listo para reproducir.');
+ }catch(err){console.error('Fallo de importación',err);status('ERROR: '+err.message+' · '+imported+' pistas registradas. Abre consola Chrome (⌥⌘J).')}
+};
+$('demo').onclick=()=>{Array.from({length:24},(_,i)=>'Tema Demo '+String(i+1).padStart(2,'0')).forEach(n=>add(n,'','demo'));status('24 tarjetas demo cargadas: todas orbitan continuamente; sirven para probar arrastre y orden, no contienen audio.')};
+$('save').onclick=()=>{const payload={version:'2.2',queueNames:queueNames.slice(),mix:{interval:$('interval').value,fade:$('fade').value,mode:$('mixMode').value,auto:$('autoMix').checked},A:A.map(x=>({id:x.id,title:x.title,url:x.url.startsWith('blob:')?'':x.url,kind:x.kind})),queues:queues.map(q=>q.map(x=>x.id)),activeQueue,end:$('end').value};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='DJ-EXPERIENCE-PRO-SESSION.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status('Sesión guardada. Los MP3 locales no se incluyen en el JSON; tendrás que reimportarlos.')};
+$('session').onchange=async e=>{try{const data=JSON.parse(await e.target.files[0].text());A.length=0;queues.splice(0,queues.length,[],[],[],[]);activeQueue=0;playingQueue=0;B=queues[0];queueNames=['Queue 1','Queue 2','Queue 3','Queue 4'];for(const t of data.A||[]){add(t.title,t.url||'',t.kind||'audio');A[A.length-1].id=t.id||A[A.length-1].id;}const saved=Array.isArray(data.queues)?data.queues:[data.B||[]];queues.splice(0,queues.length,...saved.map(ids=>ids.map(id=>A.find(x=>x.id===id)).filter(Boolean)));if(!queues.length)queues.push([]);queueNames=queues.map((q,i)=>String(data.queueNames?.[i]||'Queue '+(i+1)).slice(0,50));activeQueue=Math.max(0,Math.min(Number(data.activeQueue)||0,queues.length-1));B=queues[activeQueue];$('end').value=data.end||'a';if(data.mix){$('interval').value=data.mix.interval||30;$('fade').value=data.mix.fade??5;$('mixMode').value=data.mix.mode||'timer';$('autoMix').checked=data.mix.auto!==false}render();status('Sesión Multi Queue cargada. Reimporta los MP3 locales si corresponde.')}catch(err){status('JSON inválido: '+err.message)}};
+</script></body></html>
